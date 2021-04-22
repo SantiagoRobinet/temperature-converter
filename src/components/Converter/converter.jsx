@@ -4,17 +4,25 @@ import React, { useState } from 'react';
 function Converter(){
 
 const [temperature, setTemperature] = useState('celcius');
+const [degrees, setDegrees] = useState(0);
 
 function checkToogle(){
     if(temperature === 'celcius'){
-        return 'farenheit'
+        return 'Farenheit'
     } else {
-        return 'celcius'
+        return 'Celcius'
     }
 }
 
+function saveDegrees(e){
+    setDegrees(parseFloat(e.target.value))
+    console.log(typeof e.target.value)
+}
+
+console.log(typeof degrees)
 return (
     <div>
+        <input type="number" min='0' onChange={saveDegrees}/>
         <section>
             <label>
                 <input type='radio' value='celcius' checked={temperature === 'celcius'} onChange={() => setTemperature('celcius')}/>
