@@ -1,0 +1,46 @@
+.degrees{
+    font-size: 25px;
+    text-align: center;
+    width: 25%;
+    max-width: 205px;
+    padding: 10px;
+    margin-top: 16px;
+}
+
+.radio-button__container{
+    padding: 12px;
+}
+
+.radio-button{
+    font-size: 18px;
+    margin: 14px;
+}
+
+.convert-button{
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(43, 156, 145);
+    transition: 0.8s;
+    padding: 12px;
+    font-size: 15px;
+    color: whitesmoke;
+    font-weight: 300;
+    margin-top: 25px;
+}
+
+.convert-button:hover {
+    background-color: turquoise;
+}
+
+.result__container{
+    padding: 8px;
+    margin-top: 20px;
+}
+
+.result{
+    display: inline;
+    padding: 8px;
+    margin-top: 20px;
+    border: 4px turquoise solid;
+    border-radius: 6px;
+}
