@@ -22,6 +22,22 @@ function farenheitToCelcius(degrees){
     }
 }
 
+function handleClick(degrees, convertion){
 
-console.log(celciusToFarenheit('f'))
-console.log(farenheitToCelcius(120)) 
+    let finalResult = null;
+
+    switch(convertion){
+        case 'celcius':
+            finalResult = celciusToFarenheit(degrees);
+            break;
+        
+        case 'farenheit':
+            finalResult = farenheitToCelcius(degrees);
+            break;
+
+        default:
+            finalResult = 'Something ocurred';
+    }
+
+    return finalResult;
+}
