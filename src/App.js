@@ -1,10 +1,12 @@
 import './App.css';
-import Converter from './components/Converter/converter';
+import Converter from './components/Converter/Converter';
+import Header from './components/Header/Header';
 
 function App() {
   return (
     <div className="App">
-     <Converter />
+      <Header/>
+      <Converter />
     </div>
   );
 }

@@ -41,3 +41,6 @@ function handleClick(degrees, convertion){
 
     return finalResult;
 }
+
+
+export {handleClick};
