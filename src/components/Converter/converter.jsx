@@ -1,20 +1,28 @@
 import React, { useState } from 'react';
+import {handleClick} from '../../utils/functions'
 
 
 function Converter(){
 
 const [temperature, setTemperature] = useState('celcius');
+const [degrees, setDegrees] = useState(null);
+const [result, setResult] = useState(null)
 
 function checkToogle(){
     if(temperature === 'celcius'){
-        return 'farenheit'
+        return 'Farenheit'
     } else {
-        return 'celcius'
+        return 'Celcius'
     }
+}
+
+function saveDegrees(e){
+    setDegrees(parseFloat(e.target.value))
 }
 
 return (
     <div>
+        <input type="number"  onChange={saveDegrees} autoFocus/>
         <section>
             <label>
                 <input type='radio' value='celcius' checked={temperature === 'celcius'} onChange={() => setTemperature('celcius')}/>
@@ -25,7 +33,15 @@ return (
                 Fº
             </label>
         </section>
-        <h1>Convert to {checkToogle()}</h1>
+        <button onClick={() => setResult(handleClick(degrees , temperature))}>Convert to {checkToogle()}</button >
+
+       {result ? 
+        <div>
+            <h2>{result}</h2>
+            <h3>{checkToogle()}</h3>
+        </div> :
+        <h3>Press the button to see the reult</h3>
+        }
     </div>
 )
 
