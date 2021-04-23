@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {handleClick} from '../../utils/functions'
+import {handleClick, checkToogle} from '../../utils/functions'
+import '../Converter/Converter.css'
 
 
 function Converter(){
@@ -8,13 +9,6 @@ const [temperature, setTemperature] = useState('celcius');
 const [degrees, setDegrees] = useState(null);
 const [result, setResult] = useState(null)
 
-function checkToogle(){
-    if(temperature === 'celcius'){
-        return 'Farenheit'
-    } else {
-        return 'Celcius'
-    }
-}
 
 function saveDegrees(e){
     setDegrees(parseFloat(e.target.value))
@@ -22,25 +16,24 @@ function saveDegrees(e){
 
 return (
     <div>
-        <input type="number"  onChange={saveDegrees} autoFocus/>
-        <section>
-            <label>
+        <input className='degrees' type="number" onChange={saveDegrees} autoFocus/>
+        <section className='radio-button__container'>
+            <label className='radio-button'>
                 <input type='radio' value='celcius' checked={temperature === 'celcius'} onChange={() => setTemperature('celcius')}/>
-                Cº
+                ºC
             </label>
-            <label>
+            <label className='radio-button'>
                 <input type='radio' value='farenheit' checked={temperature === 'farenheit'} onChange={() => setTemperature('farenheit')}/>
-                Fº
+                ºF
             </label>
         </section>
-        <button onClick={() => setResult(handleClick(degrees , temperature))}>Convert to {checkToogle()}</button >
+        <button className='convert-button' onClick={() => setResult(handleClick(degrees , temperature))}>Convert to {checkToogle(temperature)}</button >
 
        {result ? 
-        <div>
-            <h2>{result}</h2>
-            <h3>{checkToogle()}</h3>
+        <div className='result__container'>
+            <h2 className='result'>{result}</h2>
         </div> :
-        <h3>Press the button to see the reult</h3>
+        <h3>Press the button to see the result</h3>
         }
     </div>
 )

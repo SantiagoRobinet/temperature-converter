@@ -1,24 +1,25 @@
 function celciusToFarenheit(degrees){
+
    const farenheit =  (degrees * 9/5) + 32
-  
-   if(isNaN(farenheit)){
+
+   if(isNaN(farenheit) || !degrees){
     return 'Something went wrong :('
     }else if(farenheit%1 === 0 ){
-    return farenheit;
+    return `${farenheit} ºF`;
     } else {
-    return farenheit.toFixed(2)
+    return `${farenheit.toFixed(2)} ºF`
     }
 }
 
 function farenheitToCelcius(degrees){
     const celcius = (degrees - 32) * 5/9;
     
-    if(isNaN(celcius)){
+    if(isNaN(celcius) || !degrees){
         return 'Something went wrong :('
     }else if(celcius%1 === 0 ){
-        return celcius;
+        return `${celcius} ºC`;
     } else {
-        return celcius.toFixed(2)
+        return `${celcius.toFixed(2)} ºC`
     }
 }
 
@@ -42,5 +43,13 @@ function handleClick(degrees, convertion){
     return finalResult;
 }
 
+function checkToogle(temperature){
+    if(temperature === 'celcius'){
+        return 'Farenheit'
+    } else {
+        return 'Celcius'
+    }
+}
 
-export {handleClick};
+
+export {handleClick, checkToogle};
