@@ -52,4 +52,4 @@ function checkToogle(temperature){
 }
 
 
-export {handleClick, checkToogle};
+export {handleClick, checkToogle, celciusToFarenheit, farenheitToCelcius};
