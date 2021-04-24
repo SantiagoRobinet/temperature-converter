@@ -1,5 +1,5 @@
 import './App.css';
-import Converter from './components/Converter/Converter';
+import Converter from './components/Converter/converter';
 import Header from './components/Header/Header';
 
 function App() {
