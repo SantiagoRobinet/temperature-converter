@@ -33,7 +33,7 @@ return (
         <div className='result__container'>
             <h2 className='result'>{result}</h2>
         </div> :
-        <h3>Press the button to see the result</h3>
+        <h3>Press the button to see the resultttt</h3>
         }
     </div>
 )
